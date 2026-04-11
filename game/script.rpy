@@ -19,16 +19,16 @@ label start:
 
     menu:
         "He/Him":
-            "Set successfuly"
+            "Set successfully!"
         "She/Her":
-            "Set successfuly"
+            "Set successfully!"
             $ player_pronoun = "sheher"
             $ player_pronoun_personal = "she"
             $ player_pronoun_object = "her"
             $ player_pronoun_possessive = "hers"
 
         "They/Them":
-            "Set successfuly"
+            "Set successfully!"
             $ player_pronoun = "theythem"
             $ player_pronoun_personal = "they"
             $ player_pronoun_object = "their"
@@ -40,7 +40,7 @@ label start:
     
     P "..."
     
-    P "You gotta be kidding"
+    P "You gotta be kidding..."
     
     hide manual
     
@@ -72,6 +72,7 @@ label start:
     
     show postaldude at center:
         matrixcolor BrightnessMatrix(0.0)
+    with dissolve
     $ matilda_name = "Matilda"
     m "That isn’t pretty, now is it?"
 
