@@ -4,3 +4,5 @@
 /log.txt
 /project.json
 /traceback.txt
+game/saves
+game/cache

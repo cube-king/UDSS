@@ -190,6 +190,7 @@ label start:
     P "{size=+30}WHO ARE YOU!?{/size}" with hpunch
 
     show matilda neutral
+    show rocket neutral 1
     m "Right, I apologize. We are the Overgrowth."
 
     show matilda happy
@@ -200,6 +201,7 @@ label start:
     $ rocket_name = "Rocket"
     r "Rocket."
 
+    show rocket happy 1
     $ mawce_name = "Mawce"   
     M "Mawce!"
     
@@ -209,11 +211,13 @@ label start:
     show matilda shocked
     m "And-- well, Simon should be around here somewhere..."
 
+    show matilda neutral
     f "We should be happy he’s not here, it would make this whole thing a nightmare."
 
     show rocket neutral 2
     r "If you find a snake man, try to bring him back to camp. I’m tired of dragging him back myself." 
 
+    show rocket neutral 1
     f "Quit being lazy, we have to get firewood anyways, we’ll probably find him."
 
     m "You could have tea with Mawce and I, it’ll help rest your body."
