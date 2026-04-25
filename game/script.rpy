@@ -9,11 +9,13 @@ define r = Character("[rocket_name]")
 define m = Character("[matilda_name]")
 define M = Character("[mawce_name]")
 define f = Character("[ferris_name]")
+define s = Character("[simon_name]")
 
 default matilda_name = "???"
 default mawce_name = "???"
 default rocket_name = "???"
 default ferris_name = "???"
+default simon_name = "???"
 
 define config.main_menu_music = "audio/music/MainMenu.mp3"
 
@@ -32,7 +34,7 @@ label start:
     $ start_time = build.time
     stop music fadeout 2.0
     # play music pause_menu_lmao
-    scene bg room
+    scene forest
 
     # $ player_name = renpy.input("What is your name?")
     # $ player_name = player_name.strip() # Removes accidental extra spaces
@@ -115,6 +117,7 @@ label start:
 
     "As your vision starts to blur and your eyes flutter shut, you feel as your body lifts..."
     
+    scene overgrowthBase
     hide matilda happy 
     show rocket angry 1 at left
     show matilda happy at right
@@ -212,15 +215,15 @@ label start:
     m "And-- well, Simon should be around here somewhere..."
 
     show matilda neutral
-    f "We should be happy he’s not here, it would make this whole thing a nightmare."
+    f "We should be happy he\'s not here, it would make this whole thing a nightmare."
 
     show rocket neutral 2
-    r "If you find a snake man, try to bring him back to camp. I’m tired of dragging him back myself." 
+    r "If you find a snake man, try to bring him back to camp. I\'m tired of dragging him back myself." 
 
     show rocket neutral 1
-    f "Quit being lazy, we have to get firewood anyways, we’ll probably find him."
+    f "Quit being lazy, we have to get firewood anyways, we\'ll probably find him."
 
-    m "You could have tea with Mawce and I, it’ll help rest your body."
+    m "You could have tea with Mawce and I, it\'ll help rest your body."
 
     M "I picked fresh herbs this morning!"
 
@@ -230,12 +233,57 @@ label start:
         "Have tea with Matilda and Mawce":
             pass
         "Try to find Simon":
-            pass
+            jump simon_route
 
-    "continue development here please, thanks guys"
+    "If you're seeing this, this route hasn't been "
 
     return
     
+label simon_route:
+    show matilda happy
+    m "Stay safe!"
+
+    scene simonForest
+
+    "You make your way toward the forest path, not quite sure what you\'re even looking for,
+    or even what a snake man would look like in this context."
+
+    "It doesn\'t take long for your foot to step over a foreign object, 
+    a loud hiss piercing through the air as the object jerks back, making you step back."
+
+    "A figure emerges from behind a tree, clutching its tail."
+
+    s "Mother of Earth, what the hell is wrong with you?! Watch where you\'re walking"
+
+    P "Simon..?"
+
+    "The man pauses, squinting at you as he slowly releases his tail."
+
+    "..."
+
+    s "Yes?"
+
+    P "Your friends are looking for you."
+
+    P "The Overgrowth are looking for you."
+
+    # suprise here
+    s "They are?"
+    # default here
+    s "Right, of course they are."
+    
+    "He straightens his posture, glancing toward the little camp he’d made for himself."
+
+    "It's sub-par at best, a blanket draped over a branch propped against the tree trunk, 
+    a ripped up sleeping bag hosting a tattered comic & empty bottle on it."
+    
+    s "Yeah, I..."
+
+    s "{w=1.5}I should go back."
+
+    "CONTINUE HERE"
+    return
+
 label starve_death:
     "If you don't take the mushroom you WILL starve to death"
     menu:
@@ -254,14 +302,3 @@ label starve_death:
                     with Dissolve(3.0)
                     ""
                     return
-                        
-
-
-
-
-
-
-    P "Owie my stomach ow ow ouch"
-    "YOU DIED"
-    return
-    
